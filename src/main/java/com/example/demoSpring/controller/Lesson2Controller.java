@@ -171,7 +171,7 @@ public class Lesson2Controller {
         System.out.println(b.divide(c, 4, RoundingMode.HALF_UP));
 
         BigDecimal y = b.divide(c, 2, RoundingMode.CEILING);
-        System.out.println(y);
+
         return y;
     }
 
