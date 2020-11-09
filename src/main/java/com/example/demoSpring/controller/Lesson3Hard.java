@@ -1,16 +1,44 @@
-package ee.bcs.valiit.tasks;
+package com.example.demoSpring.controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Random;
 
 // Enne kui seda tegema hakkad tee ära Lesson 2 (välja arvatud ülesanded 6, 8, 9)
+@RestController
 public class Lesson3Hard {
     public static void main(String[] args) {
 
     }
-
-    public static int evenFibonacci(int x){
+    @GetMapping("evenfibo")
+    public static int evenFibonacci(@RequestParam("nr") int n){
         // TODO liida kokku kõik paaris fibonacci arvud kuni numbrini x
-        return 0;
+        // copied fibonacci
+        int a[] = new int [n];
+        if (n <=2) {
+            for (int i = 0; i < a.length; i++) {
+                a[i] = i;
+            }
+        } else {
+            a[0] = 0;
+            a[1] = 1;
+            for (int i = 2; i < a.length; i++) {
+                a[i] = a[i - 1] + a[i - 2];
+            }
+        }
+        for (int i = 0; i < a.length; i++) {
+            System.out.println((i+1) + ": " + a[i] + " ");
+        }
+        // Exercise begins here
+        int sum = 0;
+        for (int j = 0; j < a.length; j++){
+            if (a[j] % 2 == 0){
+                sum += a[j];
+            }
+        }
+
+        return sum;
     }
 
     public static void randomGame(){

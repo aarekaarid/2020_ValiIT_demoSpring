@@ -104,6 +104,8 @@ public class Lesson2Controller {
         }
         System.out.println("Fibolemenet nr. " + n + ": " + a[n-1]);
         return "Fibolemenet nr. " + n + ": " + a[n-1];
+
+
     }
 
 
@@ -114,7 +116,7 @@ public class Lesson2Controller {
         int a = 6;
         int b = 9;
         b = a+b-b;
-        a = a + b;
+        a = a + b;  //????
 
         System.out.println("a: " + a + "/ b: " + b);
     }
