@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Random;
+import java.util.Scanner;
 
 // Enne kui seda tegema hakkad tee ära Lesson 2 (välja arvatud ülesanded 6, 8, 9)
 @RestController
@@ -49,7 +50,24 @@ public class Lesson3Hard {
         Random random = new Random();
         int i = random.nextInt(100);
         System.out.println(i);
+
+        Scanner scanner = new Scanner(System.in);
+        int j = scanner.nextInt();
+
+        if (i < j){
+            System.out.println("Suurem!!!");
+        } else if (i > j){
+            System.out.println("V@iksem");
+        }
     }
+
+    //    Scanner scanner = new Scanner(System.in);
+//        System.out.println("Palun numbreid " + a.length + "tükki");
+//                for (int i = 0; i < a.length; i++) {
+//        int j = scanner.nextInt();
+//        a[i] = j;
+//        }
+
 
     public static String morseCode(String text){
         // TODO kirjuta programm, mis tagastab sisestatud teksti morse koodis (https://en.wikipedia.org/wiki/Morse_code)
@@ -57,3 +75,5 @@ public class Lesson3Hard {
         return "";
     }
 }
+
+

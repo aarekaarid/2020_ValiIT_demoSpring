@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--    <style>-->
+<!--        body {background-color: powderblue;}-->
+<!--        h1 {color: blue;}-->
+<!--        p.test {color: red;}-->
+<!--    </style>-->
+
+    <meta charset="UTF-8">
+    <title>Home</title>
+<!--Connecting stylesheet 'styles.css'-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div name = "container"> Empty div</div>
+
+<!--JavaScript-->
+<script>
+    // alert('PRESS OK!')  //commenting
+    // alert('PRESS more!')
+    let element = document.getElementById("mydate"); //selecting element
+//    element.value = "midagi";    //giving a value to element
+//    Creating element
+//     let element = document.get
+//
+//     let myElement = document.createElement("li");
+//     myNewElement.appendChild(myNewElement);
+//     myNewElement.innerHTML = "New text item";
+
+
+
+</script>
+
+<!--CSS example-->
+<p style="color: red">This is red text</p>
+
+<h2>Tables</h2>
+<table width="300px" border="1" align="center">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>address</th>
+        <th><input type="button"></th>
+    </tr>
+    <tr align="center">
+        <td>1</td>
+        <td>Juri</td>
+        <td>Klooga</td>
+        <th><input type="password"></th>
+    </tr>
+    <tr align="center">
+        <td>2</td>
+        <td colspan="2"><input type="radio"></td>
+        <td><input type="search"></td>
+    </tr>
+</table>
+<!--Takes format from CSS stylesheet-->
+<p class="test">This color comes from CSS stylesheet</p>
+
+<h1 id="h1">Heading1</h1><br>
+<h1>Heading2</h1><br>
+<h3>Heading3</h3><br>
+
+HTML: Hello World!<br>
+<img src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg" alt="Eiffel"/><br>
+<a href="https://www.google.ee/" target="_blank">GOOGLE</a><br>
+
+<h2>List elements (bullets)</h2>
+<ul>
+    <li>Element1</li>
+    <li>Element2</li>
+    <li>Element3</li>
+</ul>
+<h2>List elements (numbers)</h2>
+<ol>
+    <li>Element1</li>
+    <li>Element2</li>
+    <li>Element3</li>
+</ol>
+<h2>List elements (with definition)</h2>
+<dl>
+    <dt>Element1</dt>
+    <dd>Element definition</dd>
+    <dt>Element2</dt>
+    <dd>Element definition</dd>
+    <dt>Element3</dt>
+    <dd>Element definition</dd>
+</dl>
+
+<h2>INPUT FIELDS</h2>
+Radio buttons:
+<input type="radio" name="a" value="a">
+<input type="radio" name="a" value="b">
+<input type="radio" name="a" value="c">
+<br>
+Text area: <textarea></textarea>
+<br>
+Input number: <input type="number">
+<br>
+Input email: <input type="email">
+<br>
+Input date: <input id=mydate type="date">
+<br>
+Input datetime local: <input type="datetime-local">
+<br>
+Input time: <input type="time">
+<br>
+Input color: <input type="color">
+<br>
+Input range: <input type="range">
+<br>
+<button onclick="alert('Hey!');">NUPP mis teeb HEI</button>
+<br>
+<!--PROJECT 'MY BUTTON1'-->
+<button id="myButton1">MY BUTTON1</button>
+<script>
+    let myButton1 = document.getElementById("myButton1");
+    myButton1.onclick = function (){
+        alert("MY BUTTON1")
+    }
+</script>
+<!--END OF PROJECT 'MY BUTTON1'-->
+<br>
+<!--PROJECT 'MY BUTTON2'-->
+<button id="myButton2">MY BUTTON2</button>
+<table id="myTable"></table>
+<script>
+    let myButton2 = document.getElementById("myButton2");
+    myButton2.onclick = function (){
+        let myTable = document.getElementById("myTable");
+        let rowElement = document.createElement("tr");
+        let cellElement = document.createElement("td");
+        rowElement.append(cellElement);
+        cellElement.innerText="MY BUTTON PROJECT";
+        myTable.append(rowElement);
+    }
+</script>
+<!--END OF PROJECT 'MY BUTTON2(TOODAB VEERUD)'-->
+<br>
+<!--PROJECT 'MY BUTTON3'-->
+<button id="myButton3">MY BUTTON3</button>
+<input id="myNumber3" type="number">
+<table id="myTable3"></table>
+<script>
+    let myButton3 = document.getElementById("myButton3");
+    myButton3.onclick = function (){
+        let myNumber3 = document.getElementById("myNumber3").value;
+        let rowElement3 = document.createElement("tr");
+
+        for (let i=1; i<=myNumber3; i++){
+        // alert(myNumber3)
+            let cellElement3 = document.createElement("td");
+            cellElement3.innerText=i;
+            rowElement3.append(cellElement3);
+        }
+        let myTable3 = document.getElementById("myTable3"); //create empty table
+        myTable3.append(rowElement3);   //inserting variable rowElement3 into myTable3
+    }
+</script>
+<!--END OF PROJECT 'MY BUTTON3'-->
+<br>
+<!--PROJECT 'MY BUTTON4' (KORRUTUSTABEL)-->
+<button id="myButton4">MY BUTTON4</button>
+<input id="myNumber41" type="number">
+<input id="myNumber42" type="number">
+<table id="myTable4"></table>
+<script>
+    let myButton4 = document.getElementById("myButton4");
+    myButton4.onclick = function (){
+        let myNumber41 = document.getElementById("myNumber41").value;
+        let myNumber42 = document.getElementById("myNumber42").value;
+        let myTable4 = document.getElementById("myTable4");
+        for (let j=1; j<=myNumber41; j++)
+        {
+            let rowElement4 = document.createElement("tr");
+            for (let i=1; i<=myNumber42; i++)
+            {
+                // alert(myNumber4)
+                let cellElement4 = document.createElement("td");
+                cellElement4.innerText=i*j;
+                rowElement4.append(cellElement4);
+            }
+            myTable4.append(rowElement4);
+        }
+    }
+</script>
+<!--END OF PROJECT 'MY BUTTON4'-->
+
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BankFetch(SelectMany)</title>
+</head>
+<body>
+<!--MAKING QUERY AGAINST DATABASE-->
+<table id="myTable" border="1"></table>     <!--HTML table creation-->
+<script>
+    //fetch and promise
+    let a = fetch("http://localhost:8080/selectmany").then(
+        function (result){
+            console.log(result);    //F12 console printimine
+            return result.json();
+        }
+    ).then(
+        function (result) {
+            console.log(result);
+            let table = document.getElementById("myTable");
+            for (let i = 0; i < result.length; i++){        //
+                let newRow = document.createElement("tr");  //row tag generation <tr></tr>
+// column 'Name'
+                let newCell = document.createElement("td"); //1st empty column tag: <td></td>
+                newCell.innerText = result[i].name;         //
+                newRow.append(newCell);
+// column 'Address'
+                let newCell4 = document.createElement("td");
+                newCell4.innerText = result[i].address;
+                newRow.append(newCell4);
+// column 'Account Number'
+                let newCell2 = document.createElement("td");
+                newCell2.innerText = result[i].accountNr;
+                newRow.append(newCell2);
+// column 'Balance'
+                let newCell3 = document.createElement("td");
+                newCell3.innerText = result[i].balance;
+                newRow.append(newCell3);
+//table creation
+                table.append(newRow);
+            }
+        }
+    )
+
+</script>
+
+</body>
+</html>

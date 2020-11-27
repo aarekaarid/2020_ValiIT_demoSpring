@@ -1,5 +1,4 @@
 package com.example.demoSpring.controller;
-
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
@@ -11,7 +10,7 @@ public class TestController {
 
     List<TaskFriday> workerList = new ArrayList<>();    //this is for task Exercise (REST endpoint 2)
 
-    @GetMapping(value = "/")    //every @RestController have @GetMapping/@PostMapping/@PutMapping, it says if anybody makes request show this: HelloWorld!
+    @GetMapping(value = "helloworld")    //every @RestController have @GetMapping/@PostMapping/@PutMapping, it says if anybody makes request show this: HelloWorld!
     public  String test(){      //address: localhost:8080
         return "Hello World!";
     }
@@ -83,5 +82,19 @@ public class TestController {
         workerList.remove(workerId);
         return workerList;
     }
+
+    //Vue projekti mapping
+    @CrossOrigin
+    @PostMapping("register")
+    public List<User> register(@RequestBody User user){
+        System.out.println(user);
+        List<User> userList = new ArrayList<>();
+        userList.add(user);
+        userList.add(new User("John", "john@gmail.com", 23));
+        userList.add(new User("Jane", "jane@gmail.com", 29));
+        userList.add(new User("Janno", "janno@gmail.com", 33));
+        return userList;
+    }
+
 
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BankFetch(ShowBalanceByID)</title>
+</head>
+<body>
+<!--MAKING QUERY AGAINST DATABASE-->
+Enter account "id":
+<input id="myInput" type="number">
+<button id="myButton">GET BALANCE</button>
+<br>
+Current balance:
+<p id="balance"></p>     <!--HTML paragraph creation-->
+<script>
+    let myButton = document.getElementById("myButton");
+    myButton.onclick = function () {
+        let myInput = document.getElementById("myInput").value;
+        //fetch and promise
+        fetch("http://localhost:8080/account/" + myInput).then(
+            function (result) {
+                console.log(result);    //F12 console printimine
+                return result.text();   //casting 'result' to text!
+            }
+        ).then(
+            function (result){
+                document.getElementById("balance").innerText = result;
+            }
+        )
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Level1/13</title>
+<!--    Create a function extractPersonBirthYear(), which has one input parameter named personalCode. Based on the input, derive the birth year of the person identified by the specified personal code parameter.-->
+<!--    Return that value (return statement).-->
+<!--    Call the function and print the result to the console.-->
+<!--    Personal code definition: https://et.wikipedia.org/wiki/Isikukood-->
+</head>
+<body>
+<button id="myButton">EXTRACT BIRTHDAY</button>
+<input id="personalCode" type="text" maxlength="11">
+<script>
+    let myButton = document.getElementById("myButton");
+    let personalCode = document.getElementById("personalCode")
+    function extractPersonBirthYear(personalCode){
+//        let personalCode = document.getElementById("personalCode").value;
+//        alert(personalCode);
+//        return personalCode;
+        console.log(personalCode);
+    }
+    myButton.onclick = extractPersonBirthYear();
+
+
+    //    console.log()
+
+
+</script>
+</body>
+</html>

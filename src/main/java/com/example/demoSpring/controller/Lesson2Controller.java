@@ -140,7 +140,7 @@ public class Lesson2Controller {
                 counter++;
             }
             System.out.println(counter);
-            return counter;
+            return counter;     //todo1 - sequence length
         }
     }
 
@@ -172,7 +172,7 @@ public class Lesson2Controller {
 
         System.out.println(b.divide(c, 4, RoundingMode.HALF_UP));
 
-        BigDecimal y = b.divide(c, 2, RoundingMode.CEILING);
+        BigDecimal y = a.multiply(d.subtract(b.divide(c, 2, RoundingMode.CEILING)));
 
         return y;
     }

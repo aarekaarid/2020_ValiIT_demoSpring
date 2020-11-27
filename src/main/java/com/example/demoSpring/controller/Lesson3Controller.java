@@ -13,14 +13,13 @@ public class Lesson3Controller {
     //  HTTP Exercise 'uusSumma()'
     @GetMapping ("uussumma")
     public int Lesson3(@RequestParam("x") int x, @RequestParam("y") int y){
+
         return Lesson3Controller.uusSumma(x, y);
     }
 
     // HTTP Exercise 'sum()' DONT DO AT THE MOMENT
 
     // HTTP Exercise ''
-
-
 
 
     public static int uusSumma(int x, int y) {

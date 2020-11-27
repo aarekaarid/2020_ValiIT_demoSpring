@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonazi</title>
+</head>
+<body>
+<button id="myButton">Fibonazi</button>
+<input id="myInput" type="number">
+<table id="myTable" border="1"></table>
+<script>
+    alert("Test1")
+    //loe sisse number x ja tryki v@lja x esimest fibonacci arvu
+    let myButton = document.getElementById("myButton");
+    myButton.onclick = function (){
+        let myInput = document.getElementById("myInput").value;
+//        alert(myInput);
+// here starts fibo func
+        let fiboList = [];
+        if (myInput <=2) {
+            for (let i = 0; i < myInput; i++) {
+                fiboList[i] = i;
+            }
+        } else {
+            fiboList[0] = 0;
+            fiboList[1] = 1;
+            for (let i = 2; i < myInput; i++) {
+                fiboList[i] = fiboList[i - 1] + fiboList[i - 2];
+            }
+        }
+        //here we start taking sequence elements and put them into table
+        let rowElement = document.createElement("tr");
+        for (let i = 0; i < fiboList.length; i++) {
+            let cellElement = document.createElement("td");
+            cellElement.innerText=fiboList[i];
+            rowElement.append(cellElement);
+        }
+        let myTable = document.getElementById("myTable");
+        myTable.append(rowElement);
+
+// here ends fibo func
+    }
+    // let myTable = document.getElementById("myTable");
+
+</script>
+</body>
+</html>
